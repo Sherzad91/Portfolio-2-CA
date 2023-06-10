@@ -1,0 +1,29 @@
+section#footer {
+    padding: 5rem 0;
+    background-color: $brownColor;
+    .container {
+        text-align: center;
+        h1 {
+            font-size: 3rem;
+            color: $whiteColor;
+        }
+        #socials {
+            margin: 2rem 0;
+            a {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+                background-color: $whiteColor;
+                color: $brownColor;
+                text-align: center;
+                line-height: 55px;
+                margin: .4rem;
+                border-radius: 100%;
+            }
+        }
+        p {
+            color: $whiteColor;
+        }
+    }
+}

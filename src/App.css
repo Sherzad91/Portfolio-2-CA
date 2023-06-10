@@ -1,0 +1,462 @@
+/* Reset default css settings */
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 80%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol,
+ul,
+dl {
+  list-style-type: none;
+}
+
+/*Global*/
+header .info-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+@media all and (max-width: 991px) {
+  html {
+    font-size: 70%;
+  }
+  .container {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+}
+header {
+  height: 100vh;
+  width: 100%;
+  background-color: #F9F9F9;
+  background-image: linear-gradient(to right, #F9F9F9, #FFFFFF);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+header > nav {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 0;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 3px 0 #F9F9F9;
+}
+header > nav > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header > nav > .container > #logo {
+  font-size: 1.2rem;
+  color: #000000;
+  font-weight: bold;
+}
+header > nav > .container > #menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  gap: 3rem;
+}
+header > nav > .container > #menu > a {
+  color: #7E7D7A;
+  line-height: 1.8rem;
+}
+header > nav > .container > #menu > a:not(#hire) {
+  position: relative;
+}
+header > nav > .container > #menu > a:not(#hire)::before {
+  transition: all 200ms ease-in-out;
+  display: block;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #A57C54;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+header > nav > .container > #menu > a:not(#hire):hover::before, header > nav > .container > #menu > a:not(#hire).active::before {
+  width: 70% !important;
+}
+header > nav > .container > #menu > a#hire {
+  border: 2px solid #000000;
+  padding: 0.7rem 2.5rem;
+  color: #000000;
+  font-weight: bold;
+}
+@media all and (max-width: 768px) {
+  header > nav > .container > #menu {
+    transition: all 200ms ease;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #A57C54;
+    z-index: 2;
+  }
+  header > nav > .container > #menu.open {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  header > nav > .container > #menu > a {
+    color: #FFFFFF;
+    margin: 1rem 1.5rem;
+  }
+  header > nav > .container > #menu > a:not(#hire)::before {
+    background-color: #000000;
+  }
+  header > nav > .container > #menu > a:not(#hire):hover::before, header > nav > .container > #menu > a:not(#hire).active::before {
+    width: 70% !important;
+  }
+  header > nav > .container > #menu > a#hire {
+    margin-top: 0;
+  }
+}
+header > nav > .container > #toggler {
+  display: none;
+  font-size: 1.5rem;
+}
+@media all and (max-width: 768px) {
+  header > nav > .container > #toggler {
+    display: block;
+  }
+}
+header .info-holder {
+  flex: 1;
+  height: 100%;
+}
+header .info-holder > div h1 {
+  font-size: 3.5rem;
+}
+header .info-holder > div h1 span {
+  -webkit-text-fill-color: #F9F9F9;
+  -webkit-text-stroke: 1px #7E7D7A;
+}
+header .info-holder > div h6 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #7E7D7A;
+}
+@media all and (max-width: 991px) {
+  header .info-holder {
+    padding-left: 1.5rem;
+    height: 60%;
+  }
+  header .info-holder > div h1 {
+    font-size: 2.5rem;
+  }
+  header .info-holder > div h6 {
+    font-size: 1rem;
+  }
+}
+header .image-holder {
+  flex: 1;
+  height: 100%;
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+@media all and (max-width: 991px) {
+  header .image-holder {
+    height: 60%;
+  }
+}
+@media all and (max-width: 768px) {
+  header .image-holder {
+    height: 55%;
+  }
+}
+
+section#about .container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4rem;
+}
+section#about .container .image-holder {
+  width: 40%;
+}
+section#about .container .info-holder {
+  width: 60%;
+}
+section#about .container .info-holder button {
+  background-color: #F9F9F9;
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: #000000;
+}
+section#about .container .info-holder h2 {
+  margin: 2rem 0;
+  width: 60%;
+}
+section#about .container .info-holder a {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  color: #FFFFFF;
+  background-color: #000000;
+  text-transform: uppercase;
+}
+@media all and (max-width: 768px) {
+  section#about .container {
+    flex-direction: column;
+  }
+  section#about .container .image-holder {
+    width: 60%;
+  }
+  section#about .container .info-holder {
+    width: 100%;
+  }
+  section#about .container .info-holder button {
+    padding: 0.7rem 1.5rem;
+  }
+  section#about .container .info-holder h2 {
+    width: 100%;
+  }
+  section#about .container .info-holder a {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    color: #FFFFFF;
+    background-color: #000000;
+    text-transform: uppercase;
+  }
+}
+
+section#portfolio .container nav, section#projects .container nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+section#portfolio .container nav button, section#projects .container nav button {
+  display: inline-block;
+  min-width: 80px;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+}
+section#portfolio .container nav button.active, section#projects .container nav button.active {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+section#portfolio .container .album, section#projects .container .album {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+section#portfolio .container .album div.image-holder, section#projects .container .album div.image-holder {
+  width: calc(25% - 2rem);
+  position: relative;
+  overflow: hidden;
+}
+section#portfolio .container .album div.image-holder .info, section#projects .container .album div.image-holder .info {
+  transition: all 200ms ease-in-out;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, RGBA(255, 0, 0, 0.6), transparent);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+section#portfolio .container .album div.image-holder .info a, section#projects .container .album div.image-holder .info a {
+  background-color: #000000;
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: #FFFFFF;
+}
+section#portfolio .container .album div.image-holder img, section#projects .container .album div.image-holder img {
+  transition: all 200ms ease-in-out;
+}
+section#portfolio .container .album div.image-holder:hover .info, section#projects .container .album div.image-holder:hover .info {
+  bottom: 0;
+}
+section#portfolio .container .album div.image-holder:hover img, section#projects .container .album div.image-holder:hover img {
+  transform: scale(1.2);
+}
+@media all and (max-width: 768px) {
+  section#portfolio .container .album div.image-holder, section#projects .container .album div.image-holder {
+    width: calc(50% - 2rem);
+  }
+}
+
+section#skills .container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4rem;
+}
+@media all and (max-width: 991px) {
+  section#skills .container {
+    display: block;
+  }
+}
+section#skills .container .info {
+  width: 50%;
+}
+section#skills .container .info h2 {
+  margin: 2rem 0;
+}
+section#skills .container .info p {
+  color: #7E7D7A;
+}
+@media all and (max-width: 991px) {
+  section#skills .container .info {
+    width: 80%;
+    margin-bottom: 6rem;
+  }
+}
+section#skills .container .rates {
+  width: 50%;
+}
+section#skills .container .rates > div {
+  margin: 2rem 0;
+}
+section#skills .container .rates > div p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section#skills .container .rates > div p span {
+  color: #7E7D7A;
+  font-size: 0.9rem;
+}
+section#skills .container .rates > div .rate {
+  margin-top: 0.6rem;
+  height: 3px;
+  position: relative;
+}
+section#skills .container .rates > div .rate span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #000000;
+}
+@media all and (max-width: 991px) {
+  section#skills .container .rates {
+    width: 80%;
+  }
+}
+
+section#footer {
+  padding: 5rem 0;
+  background-color: #A57C54;
+}
+section#footer .container {
+  text-align: center;
+}
+section#footer .container h1 {
+  font-size: 3rem;
+  color: #FFFFFF;
+}
+section#footer .container #socials {
+  margin: 2rem 0;
+}
+section#footer .container #socials a {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-size: 1.8rem;
+  background-color: #FFFFFF;
+  color: #A57C54;
+  text-align: center;
+  line-height: 55px;
+  margin: 0.4rem;
+  border-radius: 100%;
+}
+section#footer .container p {
+  color: #FFFFFF;
+}
+
+section#contact .container h6 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+}
+section#contact .container form {
+  border-radius: 2px;
+}
+section#contact .container form > div {
+  margin: 1rem 0;
+}
+section#contact .container form > div input,
+section#contact .container form > div textarea {
+  display: block;
+  border: 1px solid #7E7D7A;
+  padding: 1rem;
+  border-radius: 3px;
+  width: 60%;
+}
+section#contact .container form > div button {
+  display: inline-block;
+  min-width: 120px;
+  padding: 1rem;
+  color: #FFFFFF;
+  background-color: #A57C54;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+@media all and (max-width: 991px) {
+  section#contact .container form > div input,
+  section#contact .container form > div textarea {
+    width: 80%;
+  }
+}
+@media all and (max-width: 768px) {
+  section#contact .container form > div input,
+  section#contact .container form > div textarea {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=App.css.map */

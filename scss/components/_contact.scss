@@ -1,0 +1,50 @@
+section#contact {
+    .container {
+        h6 {
+            margin: 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        form {
+            border-radius: 2px;
+
+            >div {
+                margin: 1rem 0;
+
+                input,
+                textarea {
+                    display: block;
+                    border: 1px solid $grayColor;
+                    padding: 1rem;
+                    border-radius: 3px;
+                    width: 60%
+                }
+
+                button {
+                    display: inline-block;
+                    min-width: 120px;
+                    padding: 1rem;
+                    color: $whiteColor;
+                    background-color: $brownColor;
+                    border-radius: 2px;
+                    text-transform: uppercase;
+
+                }
+
+                @include tablet {
+                    input,
+                    textarea {
+                        width: 80%
+                    }
+                }
+
+                @include mobile {
+                    input,
+                    textarea {
+                        width: 100%
+                    }
+                }
+            }
+        }
+    }
+}

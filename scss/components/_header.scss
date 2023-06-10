@@ -1,0 +1,173 @@
+header {
+    height: 100vh;
+    width: 100%;
+    background-color: $lightGrayColor;
+    background-image: linear-gradient(to right, $lightGrayColor, $whiteColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    >nav {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem 0;
+        background-color: $whiteColor;
+        box-shadow: 0 1px 3px 0 $lightGrayColor;
+
+        >.container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            >#logo {
+                font-size: 1.2rem;
+                color: $blackColor;
+                font-weight: bold;
+            }
+
+            >#menu {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                text-transform: uppercase;
+                font-size: .9rem;
+                gap: 3rem;
+
+                >a {
+                    color: $grayColor;
+                    line-height: 1.8rem;
+
+                    &:not(#hire) {
+                        position: relative;
+
+                        &::before {
+                            transition: all 200ms ease-in-out;
+                            display: block;
+                            content: "";
+                            width: 0%;
+                            height: 2px;
+                            background-color: $brownColor;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                        }
+
+                        &:hover::before,
+                        &.active::before {
+                            width: 70% !important;
+                        }
+                    }
+                }
+
+                >a#hire {
+                    border: 2px solid $blackColor;
+                    padding: .7rem 2.5rem;
+                    color: $blackColor;
+                    font-weight: bold;
+                }
+
+                @include mobile {
+                    transition: all 200ms ease;
+                    clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+                    &.open {
+                        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                    }
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background-color: $brownColor;
+                    z-index: 2;
+
+                    >a {
+                        color: $whiteColor;
+                        margin: 1rem 1.5rem;
+
+                        &:not(#hire) {
+                            &::before {
+                                background-color: $blackColor;
+                            }
+
+                            &:hover::before,
+                            &.active::before {
+                                width: 70% !important;
+                            }
+                        }
+                    }
+
+                    >a#hire {
+                        margin-top: 0;
+                    }
+
+                }
+            }
+
+            >#toggler {
+                display: none;
+                font-size: 1.5rem;
+
+                @include mobile {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .info-holder {
+        flex: 1;
+        height: 100%;
+        @extend %flex-center;
+
+        >div {
+            h1 {
+                font-size: 3.5rem;
+
+                span {
+                    -webkit-text-fill-color: $lightGrayColor;
+                    -webkit-text-stroke: 1px $grayColor;
+                }
+            }
+
+            h6 {
+                margin-top: 1rem;
+                font-size: 1.2rem;
+                color: $grayColor;
+            }
+        }
+
+        @include tablet {
+            padding-left: 1.5rem;
+            height: 60%;
+
+            >div {
+                h1 {
+                    font-size: 2.5rem;
+                }
+
+                h6 {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    .image-holder {
+        flex: 1;
+        height: 100%;
+        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+
+        @include tablet {
+            height: 60%;
+        }
+
+        @include mobile {
+            height: 55%;
+        }
+    }
+}

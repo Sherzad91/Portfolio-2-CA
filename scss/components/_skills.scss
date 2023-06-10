@@ -1,0 +1,56 @@
+section#skills {
+    .container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 4rem;
+        @include tablet {
+            display: block;
+        }
+        .info {
+            width: 50%;
+            h2 {
+                margin: 2rem 0;
+            }
+            p {
+                color: $grayColor;
+            }
+            @include tablet {
+                width: 80%;
+                margin-bottom: 6rem;
+            }
+        }
+
+        .rates {
+            width: 50%;
+            > div {
+                margin: 2rem 0;
+                p {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    span {
+                        color: $grayColor;
+                        font-size: .9rem;
+                    }
+                }
+                .rate {
+                    margin-top: .6rem;
+                    height: 3px;
+                    position: relative;
+                    span {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        background-color: $blackColor;
+                    }
+                }
+            }
+            @include tablet {
+                width: 80%;
+            }
+        }
+    }
+}
