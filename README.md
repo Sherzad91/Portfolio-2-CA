@@ -1,7 +1,7 @@
 
 # My Portfolie
 
-![image](src/components/images/images/por5.png)
+![image](/src/components/images/images/por5.png)
 
 
 
