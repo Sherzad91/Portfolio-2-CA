@@ -33,7 +33,7 @@ const collection = [
   {
     image: P5,
     target: "front",
-    url: "https://github.com/Sherzad91",
+    url: "https://sunny-starship-4d47df.netlify.app/",
 
   },
   {
